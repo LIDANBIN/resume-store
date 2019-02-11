@@ -1,0 +1,116 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tabBar/resume/resume",
+			"style": {
+				"navigationBarTitleText": "简历列表",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							// "text" : "\ue534",
+							// "fontSrc" : "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/template/template",
+			"style": {
+				"navigationBarTitleText": "模版列表",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							// "text" : "\ue534",
+							// "fontSrc" : "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/self-center/self-center",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							// "text" : "\ue534",
+							// "fontSrc" : "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/template-detail/template-detail",
+			"style": {
+				"navigationBarTitleText": "模版详情",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							// "text" : "\ue534",
+							// "fontSrc" : "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/edit-resume/edit-resume",
+			"style": {
+				"navigationBarTitleText": "简历编辑",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							// "text" : "\ue534",
+							// "fontSrc" : "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [{
+				"pagePath": "pages/tabBar/resume/resume",
+				"iconPath": "static/component.png",
+				"selectedIconPath": "static/componentHL.png",
+				"text": "简历"
+			},
+			{
+				"pagePath": "pages/tabBar/template/template",
+				"iconPath": "static/api.png",
+				"selectedIconPath": "static/apiHL.png",
+				"text": "模版"
+			},
+			{
+				"pagePath": "pages/tabBar/self-center/self-center",
+				"iconPath": "static/template.png",
+				"selectedIconPath": "static/templateHL.png",
+				"text": "我的"
+			}
+		]
+	}
+}
