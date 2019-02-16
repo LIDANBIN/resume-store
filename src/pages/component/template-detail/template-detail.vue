@@ -2,7 +2,9 @@
 	<view class="template-detail-wrap">
 		<view class="toggle-wrap">
 			<view class="uni-icon uni-icon-arrowleft" @click="turnLeft"></view>
-			<button class="mini-btn" type="primary" size="middle" @tab="toEditResume">+使用此模版</button>
+			<view class="user-template" @click="toEditResume">
+				<button class="mini-btn" type="primary" size="middle">+使用此模版</button>
+			</view>
 			<view class="uni-icon uni-icon-arrowright" @click="turnRight"></view>
 		</view>
 		<image style="width: 100%; height: 680px;" mode="aspectFill" :src="resumeTemplates[templateId].pic"></image>
@@ -73,6 +75,7 @@
 		height: 80upx;
 		padding: 20upx;
 		background: #f0f0f0;
+		justify-content: space-between;
 	}
 
 	.toggle-wrap .uni-icon {
