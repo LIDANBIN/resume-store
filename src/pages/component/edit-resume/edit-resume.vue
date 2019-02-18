@@ -10,12 +10,17 @@
       ></uni-segmented-control>
     </view>
     <view class="content">
+      <!-- 编辑简历 -->
       <view v-show="current === 0">
-		<!-- 简历编辑模块 -->
+        <view class="add-open">
+          <button class="mini-btn" type="primary" size="middle">添加模块</button>
+          <button class="mini-btn" type="primary" size="middle">展开模块</button>
+        </view>
+        <!-- 简历各模块 -->
         <view class="uni-card" v-for="(list,index) in lists" :key="index">
           <view class="uni-list">
             <view class="uni-list-cell uni-collapse">
-			  <!-- 折叠面板头部 -->
+              <!-- 模块标题 -->
               <view
                 class="uni-list-cell-navigate"
                 hover-class="uni-list-cell-hover"
@@ -34,12 +39,13 @@
                   :class="[list.open ? 'uni-navigate-bottom' : 'uni-navigate-right']"
                 ></view>
               </view>
-			  <!-- 面板展开内容 -->
+              <!-- 模块展开内容 -->
               <view class="uni-list uni-collapse" :class="list.open ? 'uni-active' : ''">详细</view>
             </view>
           </view>
         </view>
       </view>
+      <!-- 预览简历 -->
       <view v-show="current === 1">这是一个webview</view>
     </view>
   </view>
@@ -122,6 +128,22 @@ export default {
 </script>
 
 <style>
+.content .add-open {
+  display: flex;
+}
+.content .add-open .mini-btn {
+  flex: 1;
+  background: #f0f0f0;
+  color: #666;
+  border-radius: 0;
+  font-size: 30upx;
+  margin-top: 10upx;
+}
+.content .add-open .mini-btn::after {
+  border: none;
+  border-radius: 0;
+  border-right: 1px solid #ccc;
+}
 .uni-card {
   box-shadow: none;
 }
@@ -137,8 +159,8 @@ export default {
 }
 
 .uni-list-cell-navigate.uni-active {
-	background: #fff;
-	border-bottom: 1upx solid #eee;
+  background: #fff;
+  border-bottom: 1upx solid #eee;
 }
 
 .uni-list-cell-navigate .list-title {
