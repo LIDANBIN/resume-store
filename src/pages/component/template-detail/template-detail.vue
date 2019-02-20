@@ -18,20 +18,17 @@
 	export default {
 		methods: {
 			toEditResume() {
-				console.log(this)
-				uni.navigateTo({
+				uni.redirectTo({
 					url: '/pages/component/edit-resume/edit-resume?templateId=' + this.templateId
 				})
 			},
 			turnLeft() {
-				console.log(this.frontTemplateId)
-				uni.navigateTo({
+				uni.redirectTo({
 					url: '/pages/component/template-detail/template-detail?templateId=' + this.frontTemplateId
 				})
 			},
 			turnRight() {
-				console.log(this.nextTemplateId)
-				uni.navigateTo({
+				uni.redirectTo({
 					url: '/pages/component/template-detail/template-detail?templateId=' + this.nextTemplateId
 				})
 			}

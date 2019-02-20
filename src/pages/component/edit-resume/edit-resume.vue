@@ -35,6 +35,8 @@
                 </view>
                 <!-- 删除按钮 -->
                 <view
+                  v-if="index !== 0"
+                  @click="deleteModule(list, index)"
                   class="uni-icon"
                   :class="[list.open ? 'uni-navigate-bottom' : 'uni-navigate-right']"
                 ></view>
@@ -122,6 +124,28 @@ export default {
           this.lists[i].open = false;
         }
       }
+    },
+    deleteModule(i, index) {
+      uni.showModal({
+        content: "确定要删除" + i.name + "模块吗？",
+        success: res => {
+          if (res.confirm) {
+            this.isDeleting = true;
+            setTimeout(() => {
+              this.lists.splice(index, 1);
+              uni.showToast({
+                title: "删除成功",
+                icon: "success",
+                duration: 2000
+              });
+              this.isDeleting = false;
+              this.visibleDrawer = "";
+            }, 300);
+          } else if (res.cancel) {
+            console.log("用户点击取消");
+          }
+        }
+      });
     }
   }
 };

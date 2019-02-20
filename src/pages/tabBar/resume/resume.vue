@@ -2,7 +2,7 @@
 	<view class="jlb-resume-wrap">
 		<!-- 创建简历按钮 -->
 		<view class="button-create-resume">
-			<button type="primary">+创建新简历</button>
+			<button type="primary" @click="navigateTo()">+创建新简历</button>
 		</view>
 		<!-- 简历列表 -->
 		<view class="jlb-resume-list">
@@ -89,6 +89,11 @@
 			this.initData();
 		},
 		methods: {
+			navigateTo() {
+				uni.navigateTo({
+					url: '/pages/component/select-template/select-template'
+				})
+			},
 			// 初始化数据
 			initData() {
 				setTimeout(() => {

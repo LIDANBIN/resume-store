@@ -8,8 +8,6 @@
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
-							// "text" : "\ue534",
-							// "fontSrc" : "/static/uni.ttf",
 							"fontSize": "22px",
 							"color": "#999999"
 						}]
@@ -24,8 +22,6 @@
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
-							// "text" : "\ue534",
-							// "fontSrc" : "/static/uni.ttf",
 							"fontSize": "22px",
 							"color": "#999999"
 						}]
@@ -40,8 +36,6 @@
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
-							// "text" : "\ue534",
-							// "fontSrc" : "/static/uni.ttf",
 							"fontSize": "22px",
 							"color": "#999999"
 						}]
@@ -56,8 +50,20 @@
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
-							// "text" : "\ue534",
-							// "fontSrc" : "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/select-template/select-template",
+			"style": {
+				"navigationBarTitleText": "选择模板",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
 							"fontSize": "22px",
 							"color": "#999999"
 						}]
