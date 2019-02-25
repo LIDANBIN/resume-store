@@ -2,7 +2,7 @@
 	<view class="template-list-wrap">
 		<view class="template-item" v-for="(i, index) in resumeTemplates" :key="index">
 			<view class="image">
-				<img :src="i.pic" @click="navigateTo(index)"></img>
+				<image class="pic" mode="widthFix" :src="i.pic" @click="navigateTo(index)"></image>
 			</view>
 		</view>
 	</view>
@@ -47,7 +47,7 @@
 		overflow: hidden;
 	}
 
-	.template-item img {
+	.template-item .pic {
 		width: 100%;
 	}
 </style>

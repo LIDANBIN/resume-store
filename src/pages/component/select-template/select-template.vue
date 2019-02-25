@@ -4,7 +4,7 @@
 			<view class="template-item" v-for="(i, index) in resumeTemplates" :key="index">
 				<view class="image">
 					<view v-show="templateId == index" class="uni-icon uni-icon-checkbox-filled"></view>
-					<img :src="i.pic" @click="selectTemplate(index)"></img>
+					<image class="pic" mode="widthFix" :src="i.pic" @click="selectTemplate(index)"></image>
 				</view>
 			</view>
 		</view>
@@ -27,7 +27,7 @@
 		methods: {
 			toEditResume() {
 				uni.redirectTo({
-					url: '/pages/component/edit-resume/edit-resume?templateId=' + this.templateId
+					url: '/pages/component/edit-resume/edit-resume?templateId=' + this.templateId + '&webview=0'
 				})
 			},
 			selectTemplate(index) {
@@ -78,9 +78,10 @@
 		bottom: 0;
 		width: 100%;
 		background-color: rgba(255, 255, 255, .7);
+		z-index: 2;
 	}
 
-	.template-item img {
+	.template-item .pic {
 		width: 100%;
 	}
 </style>

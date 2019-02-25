@@ -19,7 +19,7 @@
 		methods: {
 			toEditResume() {
 				uni.redirectTo({
-					url: '/pages/component/edit-resume/edit-resume?templateId=' + this.templateId
+					url: '/pages/component/edit-resume/edit-resume?templateId=' + this.templateId + '&webview=0'
 				})
 			},
 			turnLeft() {

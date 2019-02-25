@@ -44,6 +44,20 @@
 			}
 		},
 		{
+			"path": "pages/component/login/login",
+			"style": {
+				"navigationBarTitleText": "用户登录",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
 			"path": "pages/component/template-detail/template-detail",
 			"style": {
 				"navigationBarTitleText": "模版详情",

@@ -13,7 +13,7 @@
 			<!-- 未登录 -->
 			<view v-if="!isLogin" class="jlb-resume-login">
 				——登录后查看简历——<br />
-				<button class="mini-btn" type="primary" size="mini">登录/注册</button>
+				<button class="mini-btn" type="primary" size="mini" @click="toLogin">登录/注册</button>
 			</view>
 			<view v-if="isLogin" class="jlb-resume-item" v-for="(i,index) in data" :key="index">
 				<view class="resume-item-pic">
@@ -27,8 +27,8 @@
 						{{i.time}}
 					</view>
 					<view class="btns">
-						<button class="mini-btn" type="primary" size="mini">编辑</button>
-						<button class="mini-btn" type="primary" size="mini">预览</button>
+						<button class="mini-btn" type="primary" size="mini" @click="toEditResume(i, index)">编辑</button>
+						<button class="mini-btn" type="primary" size="mini" @click="toPreViewResume(i, index)">预览</button>
 						<view class="uni-icon uni-icon-trash" @click="deleteResume(i, index)"></view>
 					</view>
 				</view>
@@ -89,6 +89,11 @@
 			this.initData();
 		},
 		methods: {
+			toLogin() {
+				uni.navigateTo({
+					url: "/pages/component/login/login"
+				})
+			},
 			navigateTo() {
 				uni.navigateTo({
 					url: '/pages/component/select-template/select-template'
@@ -127,8 +132,17 @@
 				}
 				this.data = this.data.concat(data);
 			},
-			a() {
-
+			// 编辑简历
+			toEditResume(i, index) {
+				uni.navigateTo({
+					url: '/pages/component/edit-resume/edit-resume?resumeId=' + index + '&webview=0'
+				})
+			},
+			// 预览简历
+			toPreViewResume(i, index) {
+				uni.navigateTo({
+					url: '/pages/component/edit-resume/edit-resume?resumeId=' + index + '&webview=1'
+				})
 			},
 			// 删除简历
 			deleteResume(i, index) {
