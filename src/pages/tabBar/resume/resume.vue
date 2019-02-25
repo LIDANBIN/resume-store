@@ -17,7 +17,7 @@
 			</view>
 			<view v-if="isLogin" class="jlb-resume-item" v-for="(i,index) in data" :key="index">
 				<view class="resume-item-pic">
-					<img :src="i.pic"></img>
+					<image class="pic" :src="i.pic" mode="widthFix"></image>
 				</view>
 				<view class="resume-item-infos">
 					<view class="title">
@@ -108,9 +108,9 @@
 					this.max += 10;
 					for (var i = this.max - 9; i < this.max + 1; i++) {
 						data.push({
-							name: '郭帅的简历' + i,
+							name: '小仙女的简历' + i,
 							time: i + '个月',
-							job: '产品经理',
+							job: '火星探险',
 							pic: i / 3 === parseInt(i / 3) ? 'http://pic1.win4000.com/pic/a/87/7a5266f550.jpg' : 'http://pic1.win4000.com/pic/d/b6/0b8b162c13.jpg'
 						})
 					}
@@ -124,9 +124,9 @@
 				this.max += 10;
 				for (var i = this.max - 9; i < this.max + 1; i++) {
 					data.push({
-						name: '郭帅的简历' + i,
+						name: '小仙女的简历' + i,
 						time: i + '个月',
-						job: '产品经理',
+						job: '月球探险长长长长长长长',
 						pic: i / 3 === parseInt(i / 3) ? 'http://pic1.win4000.com/pic/a/87/7a5266f550.jpg' : 'http://pic1.win4000.com/pic/d/b6/0b8b162c13.jpg'
 					})
 				}
@@ -232,20 +232,23 @@
 		overflow: hidden;
 	}
 
-	.resume-item-pic img {
+	.resume-item-pic .pic {
 		display: block;
 		width: 100%;
 	}
 
 	.jlb-resume-item .resume-item-infos {
-		flex-grow: 1;
+		width: calc(100% - 260upx);
 		padding-left: 20upx;
 	}
 
 	.resume-item-infos .title {
 		font-size: 30upx;
 		font-weight: 500;
-		height: 50upx
+		height: 50upx;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
 	}
 
 	.resume-item-infos .time {

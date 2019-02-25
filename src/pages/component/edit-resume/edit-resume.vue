@@ -131,6 +131,7 @@ export default {
     uniSegmentedControl
   },
   methods: {
+    // 切换是否预览
     onClickItem(index) {
       if (this.webview !== index) {
         uni.navigateTo({
@@ -138,6 +139,7 @@ export default {
 				})
       }
     },
+    // 展开折叠面板
     triggerCollapse(e) {
       for (var i = 0; i < this.lists.length; ++i) {
         if (e === i) {
@@ -147,6 +149,7 @@ export default {
         }
       }
     },
+    // 删除模块
     deleteModule(i, index) {
       uni.showModal({
         content: "确定要删除" + i.name + "模块吗？",
@@ -171,6 +174,7 @@ export default {
     }
   },
   computed: {
+    // 模板Id
     templateId() {
       let pages = getCurrentPages(); //获取加载的页面
       let currentPage = pages[pages.length - 1]; //获取当前页面的对象
@@ -179,6 +183,7 @@ export default {
       let route = (this.$route && this.$route.query) || options;
       return +route.templateId;
     },
+    // 简历Id
     resumeId() {
       let pages = getCurrentPages(); //获取加载的页面
       let currentPage = pages[pages.length - 1]; //获取当前页面的对象
@@ -187,6 +192,7 @@ export default {
       let route = (this.$route && this.$route.query) || options;
       return +route.resumeId;
     },
+    // 是否预览 1是 0不是
     webview() {
       let pages = getCurrentPages(); //获取加载的页面
       let currentPage = pages[pages.length - 1]; //获取当前页面的对象
