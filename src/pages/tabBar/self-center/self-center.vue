@@ -19,18 +19,24 @@
 		<view class="detail-info-wrap" v-if="isLogin">
 			<block v-for="(list,index) in lists" :key="index">
 				<view class="uni-list-cell uni-collapse">
-					<view class="uni-list-cell-navigate uni-navigate-bottom" :class="list.show ? 'uni-active' : ''" @click="trigerCollapse(index)">
+					<view class="uni-list-cell-navigate uni-navigate-bottom" :class="list.show ? 'uni-active' : ''" @click="trigerCollapse(list)">
 						{{list.title}}
 					</view>
 					<view class="uni-collapse-content" :class="list.show ? 'uni-active' : ''">
-						<view v-if="list.type === 'load'">
+						<view v-if="list.type === 'loadRecord'">
 
 						</view>
-						<view v-if="list.type === 'send'">
+						<view v-if="list.type === 'sendRecord'">
 
 						</view>
 						<view v-if="list.type === 'recharge'">
 						
+						</view>
+						<view v-if="list.type === 'upgrade'">
+
+						</view>
+						<view v-if="list.type === 'update'">
+							
 						</view>
 					</view>
 				</view>
@@ -46,27 +52,32 @@
 			return {
 				lists: [{
 						title: "下载记录",
-						type: 'load',
+						type: 'loadRecord',
+						path: '/pages/component/load-record/load-record',
 						show: false
 					},
 					{
 						title: "发送记录",
-						type: 'send',
+						type: 'sendRecord',
+						path: '/pages/component/send-record/send-record',
 						show: false
 					},
 					{
 						title: "充值记录",
 						type: 'recharge',
+						path: '/pages/component/recharge/recharge',
 						show: false
 					},
 					{
 						title: "升级VIP",
 						type: 'upgrade',
+						path: '/pages/component/upgrade/upgrade',
 						show: false
 					},
 					{
 						title: "版本更新",
 						type: 'update',
+						path: '/pages/component/update/update',
 						show: false
 					}
 				],
@@ -80,13 +91,16 @@
 				})
 			},
 			trigerCollapse(e) {
-			    for (let i = 0, len = this.lists.length; i < len; ++i) {
-			        if (e === i) {
-			            this.lists[i].show = !this.lists[i].show;
-			        } else {
-			            this.lists[i].show = false;
-			        }
-			    }
+				uni.navigateTo({
+					url: e.path
+				})
+			    // for (let i = 0, len = this.lists.length; i < len; ++i) {
+			    //     if (e === i) {
+			    //         this.lists[i].show = !this.lists[i].show;
+			    //     } else {
+			    //         this.lists[i].show = false;
+			    //     }
+			    // }
 			}
 		}
 	};
@@ -140,5 +154,13 @@
 	.self-center-wrap .detail-info-wrap {
 		margin-top: 30upx;
 		background: #fff;
+	}
+
+	.self-center-wrap .uni-list-cell-navigate.uni-navigate-bottom:after {
+		content: '\e583';
+	}
+	.self-center-wrap .uni-list-cell-navigate {
+		color: #555;
+		font-size: 28upx;
 	}
 </style>

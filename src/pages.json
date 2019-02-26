@@ -58,6 +58,76 @@
 			}
 		},
 		{
+			"path": "pages/component/load-record/load-record",
+			"style": {
+				"navigationBarTitleText": "下载记录",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/recharge/recharge",
+			"style": {
+				"navigationBarTitleText": "充值记录",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/send-record/send-record",
+			"style": {
+				"navigationBarTitleText": "发送记录",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/update/update",
+			"style": {
+				"navigationBarTitleText": "版本更新",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/upgrade/upgrade",
+			"style": {
+				"navigationBarTitleText": "升级VIP",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
 			"path": "pages/component/template-detail/template-detail",
 			"style": {
 				"navigationBarTitleText": "模版详情",

@@ -41,13 +41,13 @@
 </script>
 
 <style>
-	.use-template {
+	.select-template-wrap .use-template {
 		position: fixed;
 		bottom: 0;
 		left: 0;
 		right: 0;
 	}
-	.use-template .mini-btn {
+	.select-template-wrap .use-template .mini-btn {
 		border-radius: 0;
 	}
 
