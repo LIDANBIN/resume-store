@@ -1,7 +1,7 @@
 <template>
 	<view class="segmented-control" :class="styleType" :style="wrapStyle">
-		<view v-for="(item, index) in values" class="segmented-control-item" :class="styleType" :key="index" :style="index === currentIndex ? activeStyle : itemStyle" @click="onClick(index)">
-			{{item}}
+		<view v-for="(item, index) in 2" class="segmented-control-item" :class="styleType" :key="index" :style="index === currentIndex ? activeStyle : itemStyle" @click="onClick(index)">
+			{{index == 1 ? '预览' : '编辑'}}
 		</view>
 	</view>
 </template>
@@ -14,12 +14,12 @@
 				type: Number,
 				default: 0
 			},
-			values: {
-				type: Array,
-				default () {
-					return [];
-				}
-			},
+// 			values: {
+// 				type: Array,
+// 				default () {
+// 					return ["编辑", "预览"];
+// 				}
+// 			},
 			activeColor: {
 				type: String,
 				default: '#007aff'
@@ -29,8 +29,12 @@
 				default: 'button'
 			}
 		},
+		onShow() {
+			console.log(this.values)
+		},
 		data() {
 			return {
+				values: ['编辑', '预览'],
 				currentIndex: this.current
 			}
 		},

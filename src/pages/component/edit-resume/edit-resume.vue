@@ -1,7 +1,7 @@
 <template>
 	<view class="edit-resume-wrap">
 		<view class="uni-padding-wrap uni-common-mt">
-			<uni-segmented-control :current="webview" :values="items" v-on:clickItem="onClickItem" :styleType="styleType"
+			<uni-segmented-control :current="webview"  v-on:clickItem="onClickItem" :styleType="styleType"
 			 :activeColor="activeColor"></uni-segmented-control>
 			<!-- <view class="uni-icon uni-icon-more"></view> -->
 			<uni-fab :pattern="pattern" :content="content" :horizontal="horizontal" :vertical="vertical" :direction="direction"
