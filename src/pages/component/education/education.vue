@@ -42,7 +42,7 @@
       </picker>
     </view>
     <view class="bottom-btns">
-      <!-- <view class="uni-icon uni-icon-closeempty">删除此项</view> -->
+      <view class="uni-icon uni-icon-closeempty">删除此项</view>
       <view class="uni-icon uni-icon-checkmarkempty">保存</view>
     </view>
   </view>

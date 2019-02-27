@@ -2,7 +2,7 @@
   <view class="self-center-wrap">
     <!-- 未登录 -->
     <view class="self-base-info not-login" v-if="!isLogin">
-      <view class="avatar">
+      <view class="avatar" @click="setAvatar">
         <view class="uni-icon uni-icon-person-filled"></view>
       </view>
       <button class="mini-btn" type="primary" size="mini" @click="toLogin">登录/注册</button>
