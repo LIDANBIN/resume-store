@@ -84,7 +84,7 @@
                     <view v-for="i in 3" :key="i" class="experience-item">
                       <view class="company-name">
                         <view>华为公司</view>
-                        <view class="time">2015.09 - 2017.08
+                        <view class="time" @click="toEditExperience('work-experience')">2015.09 - 2017.08
                           <view class="uni-icon uni-icon-arrowright"></view>
                         </view>
                       </view>
@@ -106,7 +106,7 @@
                     <view v-for="i in 2" :key="i" class="experience-item">
                       <view class="company-name">
                         <view>华为公司</view>
-                        <view class="time">2015.09 - 2017.08
+                        <view class="time" @click="toEditExperience('practice-experience')">2015.09 - 2017.08
                           <view class="uni-icon uni-icon-arrowright"></view>
                         </view>
                       </view>
@@ -126,7 +126,7 @@
                     <view v-for="i in 4" :key="i" class="experience-item">
                       <view class="company-name">
                         <view>移动端常见的图标展示</view>
-                        <view class="time">2015.09 - 2017.08
+                        <view class="time" @click="toEditExperience('project-experience')">2015.09 - 2017.08
                           <view class="uni-icon uni-icon-arrowright"></view>
                         </view>
                       </view>
@@ -157,7 +157,9 @@
         </view>
       </view>
       <!-- 预览简历 -->
-      <view v-show="webview === 1">这是一个webview</view>
+      <view v-show="webview === 1">
+        <web-view :webview-styles="webviewStyles" src="https://cn.vuejs.org/"></web-view>
+      </view>
     </view>
     <!-- 底部弹层 -->
     <uni-popup :show="showPopupBottom" :type="popType" v-on:hidePopup="hidePopup">
@@ -175,7 +177,9 @@
           <view class="text">发送到邮箱</view>
         </view>
       </view>
-      <view class="jlb-import-resume" v-show="popContentType === 'importResume'"></view>
+      <view class="jlb-import-resume" v-show="popContentType === 'importResume'">
+		  <button class="mini-btn" type="primary" size="middle" @click="importResume">导入简历</button>
+	  </view>
       <view class="jlb-send-item" v-show="popContentType === 'writeForm'">
         <view class="list">
           <view class="title">发件邮件</view>
@@ -218,6 +222,11 @@ import uniPopup from "../../../components/uni-popup.vue";
 export default {
   data() {
     return {
+      webviewStyles: {
+        progress: {
+          color: "#FF3333"
+        }
+      },
       popContentType: "", // popup的内容
       popType: "middle",
       showPopupBottom: false,
@@ -310,6 +319,24 @@ export default {
     uniPopup
   },
   methods: {
+    importResume() {
+      uni.chooseImage({
+        success: chooseImageRes => {
+          const tempFilePaths = chooseImageRes.tempFilePaths;
+          uni.uploadFile({
+            url: "https://www.example.com/upload", //仅为示例，非真实的接口地址
+            filePath: tempFilePaths[0],
+            name: "file",
+            formData: {
+              user: "test"
+            },
+            success: uploadFileRes => {
+              console.log(uploadFileRes.data);
+            }
+          });
+        }
+      });
+    },
     toEditExperience(type) {
       uni.navigateTo({
         url: `/pages/component/${type}/${type}`
@@ -545,6 +572,7 @@ export default {
 <style>
 .edit-resume-wrap .uni-padding-wrap {
   position: relative;
+  margin-bottom: 20upx;
 }
 
 .edit-resume-wrap .uni-padding-wrap .uni-icon {
@@ -570,7 +598,6 @@ export default {
   color: #666;
   border-radius: 0;
   font-size: 30upx;
-  margin-top: 10upx;
 }
 
 .edit-resume-wrap .content .add-open .mini-btn::after {

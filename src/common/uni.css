@@ -106,9 +106,9 @@ form {
 .uni-common-pl{
 	padding-left:30upx;
 }
-.uni-common-mt{
+/* .uni-common-mt{
 	margin-top:30upx;
-}
+} */
 /* 背景色 */
 .uni-bg-red{
 	background:#F76260; color:#FFF;
