@@ -27,4 +27,7 @@
 	uni-actionsheet .uni-actionsheet__cell {
 		font-size: 26upx;
 	}
+	.input-placeholder {
+		color: #999;
+	}
 </style>

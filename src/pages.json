@@ -168,6 +168,118 @@
 					}
 				}
 			}
+		},
+		{
+			"path": "pages/component/base-info/base-info",
+			"style": {
+				"navigationBarTitleText": "基本信息",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/education/education",
+			"style": {
+				"navigationBarTitleText": "教育背景",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/objective/objective",
+			"style": {
+				"navigationBarTitleText": "求职意向",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/work-experience/work-experience",
+			"style": {
+				"navigationBarTitleText": "工作经验",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/project-experience/project-experience",
+			"style": {
+				"navigationBarTitleText": "项目经验",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/practice-experience/practice-experience",
+			"style": {
+				"navigationBarTitleText": "实习经验",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/specialty/specialty",
+			"style": {
+				"navigationBarTitleText": "技能特长",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/component/self-evaluation/self-evaluation",
+			"style": {
+				"navigationBarTitleText": "自我评价",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
 		}
 	],
 	"globalStyle": {
