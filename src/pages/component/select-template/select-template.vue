@@ -8,7 +8,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="use-template" @click="toEditResume">
+		<view class="use-template" @click="toEditResume" v-if="isPage">
 			<button class="mini-btn" type="primary" size="middle">开始制作简历</button>
 		</view>
 	</view>
@@ -19,6 +19,12 @@
 		mapState
 	} from 'vuex'
 	export default {
+		props: {
+			isPage: {
+				type: Boolean,
+				default: true
+			}
+		},
 		data() {
 			return {
 				templateId: 0 // 选择的模板ID
@@ -72,6 +78,7 @@
 	}
 
 	.template-item .image .uni-icon {
+		text-align: left;
 		position: absolute;
 		color: #67C23A;
 		top: 0;

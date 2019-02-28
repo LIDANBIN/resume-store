@@ -20,17 +20,17 @@
 					</button>
 				</view>
 				<!-- 简历各模块 -->
-				<view class="uni-card" v-for="list in lists" :key="list.id">
+				<view class="uni-card" v-for="(list, index) in lists" :key="list.id">
 					<view class="uni-list">
 						<view class="uni-list-cell uni-collapse">
 							<!-- 模块标题 -->
 							<view class="uni-list-cell-navigate" hover-class="uni-list-cell-hover" :class="list.open ? 'uni-active' : ''">
 								<!-- 标题部分 -->
-								<view class="list-title" @click="triggerCollapse(mindex)">
+								<view class="list-title" @click="triggerCollapse(index)">
 									<view class="title uni-icon" :class="list.open ? 'icon-arrowdown' : 'icon-arrowright'">{{list.name}}</view>
 								</view>
 								<!-- 删除按钮 -->
-								<view v-if="mindex !== 0" @click="deleteModule(list, mindex)" class="uni-icon" :class="list.open ? 'uni-navigate-bottom' : 'uni-navigate-right'"></view>
+								<view v-if="index !== 0" @click="deleteModule(list, index)" class="uni-icon" :class="list.open ? 'uni-navigate-bottom' : 'uni-navigate-right'"></view>
 							</view>
 							<!-- 模块展开内容 -->
 							<view class="uni-list uni-collapse" :class="list.open ? 'uni-active' : ''">
@@ -68,7 +68,7 @@
 									</view>
 									<!-- 工作经验 -->
 									<view class="base-info" v-if="list.id == 'experience'">
-										<view v-for="(i) in arr" :key="i" class="experience-item">
+										<view v-for="(experience, experienceIndex) in experienceArr" :key="experience" class="experience-item">
 											<view class="company-name">
 												<view>华为公司</view>
 												<view class="time" @click="toEditExperience('work-experience')">2015.09 - 2017.08
@@ -88,7 +88,7 @@
 									</view>
 									<!-- 教育背景 -->
 									<view class="base-info" v-if="list.id == 'education'">
-										<view v-for="(i) in arr" :key="i" class="experience-item">
+										<view v-for="(education, educationIndex) in educationArr" :key="education" class="experience-item">
 											<view class="company-name">
 												<view>深圳大学</view>
 												<view class="time" @click="toEdit('education')">2015.09 - 2017.08
@@ -103,7 +103,7 @@
 									</view>
 									<!-- 实习经历 -->
 									<view class="base-info" v-if="list.id == 'practice'">
-										<view v-for="(i) in arr" :key="i" class="experience-item">
+										<view v-for="(practice, practiceIndex) in practiceArr" :key="practice" class="experience-item">
 											<view class="company-name">
 												<view>华为公司</view>
 												<view class="time" @click="toEditExperience('practice-experience')">2015.09 - 2017.08
@@ -123,7 +123,7 @@
 									</view>
 									<!-- 项目经验 -->
 									<view class="base-info" v-if="list.id == 'project'">
-										<view v-for="(i) in arr" :key="i" class="experience-item">
+										<view v-for="(project, projectIndex) in projectArr" :key="project" class="experience-item">
 											<view class="company-name">
 												<view>移动端常见的图标展示</view>
 												<view class="time" @click="toEditExperience('project-experience')">2015.09 - 2017.08
@@ -232,6 +232,9 @@
           <button class="mini-btn" type="primary" size="middle" @click="(showPopupBottom = false)">发送</button>
         </view>
       </view>
+      <view class="jlb-change-template" v-show="popContentType === 'changeTemplate'">
+        <select-template :isPage="false"></select-template>
+      </view>
     </uni-popup>
   </view>
 </template>
@@ -240,23 +243,20 @@
 import uniSegmentedControl from "../../../components/uni-segmented-control.vue";
 import uniFab from "../../../components/uni-fab.vue";
 import uniPopup from "../../../components/uni-popup.vue";
+import selectTemplate from "../select-template/select-template.vue";
 
 export default {
   data() {
     return {
-			list: {
-				  id: "baseInfo",
-				  name: "基本信息",
-				  infos: true,
-				  open: false
-			},
-			mindex: 0,
       webviewStyles: {
         progress: {
           color: "#FF3333"
         }
       },
-			arr: ['一','二','三','四'],
+      practiceArr: ['practiceArr1','practiceArr2','practiceArr3','practiceArr4'],
+      projectArr: ['projectArr1','projectArr2','projectArr3','projectArr4'],
+      experienceArr: ['experienceArr1','experienceArr2','experienceArr3','experienceArr4'],
+      educationArr: ['educationArr1','educationArr2','educationArr3','educationArr4'],
       popContentType: "", // popup的内容
       popType: "middle",
       showPopupBottom: false,
@@ -346,7 +346,8 @@ export default {
   components: {
     uniSegmentedControl,
     uniFab,
-    uniPopup
+    uniPopup,
+    selectTemplate
   },
   methods: {
     importResume() {
@@ -543,6 +544,8 @@ export default {
         this.showBottomPopup("sendResume");
       } else if (e.item.text === "导入简历") {
         this.showBottomPopup("importResume");
+      } else if (e.item.text === "更换模板") {
+        this.showBottomPopup("changeTemplate");
       }
     },
     // 打开底部弹层
@@ -848,5 +851,9 @@ export default {
 .jlb-import-resume .text {
 	color: #999;
 	font-size: 24upx;
+}
+.jlb-change-template {
+  max-height: 800upx;
+  overflow: auto;
 }
 </style>
